@@ -1,0 +1,124 @@
+@import "../App.scss";
+.hamburger-menu {
+    display: none;
+    z-index: 9; //stack position
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
+    .menu-secondary-background-color {
+      background: $green;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .menu-layer {
+      position: relative;
+      background: $purple;
+      height: 100%;
+      overflow: hidden; //create mask
+
+      .menu-project-background {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: cameratilt 30s infinite;
+      }
+
+      .wrapper {
+        position: relative;
+
+        .menu-links {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+          top: 130px;
+
+          nav {
+            display: block;
+            ul {
+              padding: 0;
+              margin: 0;
+              li {
+                list-style: none;
+                font-size: 4rem;
+                font-weight: 700;
+                cursor: pointer;
+                height: 100px;
+                overflow: hidden;
+                position: relative;
+                width: 700px;
+
+                a {
+                  position: absolute;
+                  color: white;
+                  text-decoration: none;
+
+                  &:hover {
+                    color: $black;
+                  }
+                }
+              }
+            }
+          }
+
+          .info {
+            color: white;
+            width: 300px;
+
+            h3 {
+              font-size: 1.2rem;
+              margin: 8px auto;
+            }
+            p {
+              margin: 0 auto;
+              font-size: 0.8rem;
+            }
+          }
+
+          .locations {
+            position: absolute;
+            bottom: -80px;
+            color: white;
+            margin-top: 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+
+            span {
+              &:first-child {
+                margin-left: 64px;
+              }
+              font-weight: 400;
+              cursor: pointer;
+              margin: 0 32px;
+              transition: 0.3s ease-in-out;
+
+              &:hover {
+                background: $black;
+                padding: 8px 24px;
+                border-radius: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+}

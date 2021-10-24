@@ -1,0 +1,20 @@
+@mixin flex($flexdirection, $justifycontent){
+    display: flex;
+    justify-content: $justifycontent;
+    align-items: center;
+    flex-direction: $flexdirection;
+};
+
+.tech-stack{
+    @include flex(column, center);
+
+    .tech-stack-content{
+        @include flex(row, space-evenly,);
+        flex-wrap: nowrap;
+        margin-top: 50px;
+        width: 100%;
+        img{
+            padding: 15px;
+        }
+    }
+}
